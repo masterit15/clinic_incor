@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from "react-router-dom";
 import { AuthContext } from "./context";
 import './sass/main.sass';
-import Header from './layout/header';
-import Sidebar from './layout/sidebar';
-import Footer from './layout/footer';
 import AppRouter from './components/AppRouter'
 
 function App() {
@@ -25,14 +22,9 @@ function App() {
       isLoading
     }}>
       <div className="root_container">
-        <Sidebar />
-        <main>
-          <Header />
           <BrowserRouter>
             <AppRouter/>
           </BrowserRouter>
-          <Footer />
-        </main>
       </div>
     </AuthContext.Provider>
   )
