@@ -5,6 +5,7 @@ import './sass/main.sass';
 import Header from './layout/header';
 import Sidebar from './layout/sidebar';
 import Footer from './layout/footer';
+import AppRouter from './components/AppRouter'
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -23,15 +24,16 @@ function App() {
       setIsAuth,
       isLoading
     }}>
-      <BrowserRouter>
-        <div className="row">
-          <Sidebar />
-          <main>
-            <Header />
-            <Footer />
-          </main>
-        </div>
-      </BrowserRouter>
+      <div className="root_container">
+        <Sidebar />
+        <main>
+          <Header />
+          <BrowserRouter>
+            <AppRouter/>
+          </BrowserRouter>
+          <Footer />
+        </main>
+      </div>
     </AuthContext.Provider>
   )
 }
