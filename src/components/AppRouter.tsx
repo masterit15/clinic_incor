@@ -25,9 +25,16 @@ const AppRouter = () => {
                 <Sidebar />
                 <main>
                     <Header />
-                    <Outlet />
+                        <Outlet />
                     <Footer />
                 </main>
+            </>
+        )
+    }
+    const EmptyLayout = () => {
+        return (
+            <>
+            <Outlet />
             </>
         )
     }
@@ -42,8 +49,8 @@ const AppRouter = () => {
             </Routes>
             :
             <Routes>
-                <Route path="/" element={<MainLayout />}>
-                    <Route path='/login' element={<Login />} />
+                <Route path="/" element={<EmptyLayout />}>
+                    <Route path='/' element={<Login />} />
                 </Route>
             </Routes>
     );

@@ -19,7 +19,8 @@ function App() {
     <AuthContext.Provider value={{
       isAuth,
       setIsAuth,
-      isLoading
+      isLoading,
+      setLoading
     }}>
       <div className="root_container">
           <BrowserRouter>
